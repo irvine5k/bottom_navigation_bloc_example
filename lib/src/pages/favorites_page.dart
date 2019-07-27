@@ -5,7 +5,7 @@ class FavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Text("PROFILE PAGE"),
+      child: Text("FAVORITES PAGE"),
     );
   }
 }

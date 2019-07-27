@@ -3,6 +3,9 @@ import 'package:rxdart/rxdart.dart';
 enum NavigationItem { HOME, FAVORITES, PROFILE }
 
 class BottomNavigationBloc {
+  BottomNavigationBloc() {
+    _navigationController.listen((data) => "CURRENT PAGE: ${data.index}");
+  }
   final defaultItem = NavigationItem.HOME;
 
   final _navigationController = BehaviorSubject<NavigationItem>();
@@ -10,13 +13,13 @@ class BottomNavigationBloc {
 
   navigate(int i) {
     switch (i) {
-      case 1:
+      case 0:
         _navigationController.add(NavigationItem.HOME);
         break;
-      case 2:
+      case 1:
         _navigationController.add(NavigationItem.FAVORITES);
         break;
-      case 3:
+      case 2:
         _navigationController.add(NavigationItem.PROFILE);
         break;
       default:
